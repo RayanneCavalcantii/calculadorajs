@@ -2,57 +2,68 @@ let num1 = document.getElementById("txtn1")
 let num2 = document.getElementById("txtn2")
 let res = document.getElementById("res")
 
-function soma()
-{
-    if(num1.value.length == 0 || num2.value.length == 0){
+function calcular(operacao)
+{   
+    if(num1.value.length == 0 || num2.value.length == 0)
+    {
         alert("[ERRO]Faltam dados!Preencha corretamente")
-    }
+        return 
+    }  
+    
     let n1 = Number(num1.value)
     let n2 = Number(num2.value)
+    var resp = 0
+    switch(operacao)
+    {
+        case 0 :
+            resp = soma(n1,n2)
+        break
+         
+        case 1:
+            resp = subtrair(n1,n2)
+        break 
+        
+        case 2 :
+            resp = multiplicar(n1,n2)
+        break
+        
+        case 3:
+            resp = dividir(n1,n2)
+        break     
+
+    }
+    res.innerHTML = `<p>a resposta é ${resp}</p>`
+    num1.value = ""
+    num1.focus()
+    num2.value = ""
+    num2.focus()
+
+}
+
+function soma(n1,n2)
+{   
     let somatorio = (n1+n2)
-    res.innerHTML = `<p>a resposta é ${somatorio}</p>`
-    num1.value = ""
-    num1.focus()
-    num2.value = ""
-    num2.focus()
-    
+    return somatorio    
 }
-
-
-function subtrair()
+function subtrair(n1,n2)
 {
-    let n1 = Number.parseFloat(num1.value)
-    let n2 = Number.parseFloat(num2.value)
     let subtracao = n1-n2
-    res.innerHTML = `<p>a resposta é ${subtracao}</p>`
-    num1.value = ""
-    num1.focus()
-    num2.value = ""
-    num2.focus()
-
+    return subtracao
 }
-function multiplicar ()
+function multiplicar (n1,n2)
 {
-    let n1 = Number.parseFloat(num1.value)
-    let n2 = Number.parseFloat(num2.value)
     let multiplicacao = n1*n2
-    res.innerHTML = `<p>a resposta é ${multiplicacao}</p>`
-    num1.value = ""
-    num1.focus()
-    num2.value = ""
-    num2.focus()
+    return multiplicacao
 }
-function dividir(v1,v2)
+
+    
+
+function dividir(n1,n2)
 {
-    let n1 = Number.parseFloat(num1.value)
-    let n2 = Number.parseFloat(num2.value)
+    
     let divisao = n1/n2
-    res.innerHTML = `<p>a resposta é ${divisao}</p>` 
-    num1.value = ""
-    num1.focus()
-    num2.value = ""
-    num2.focus()
-   
+    return divisao 
+    
 }
 
 
