@@ -15,6 +15,7 @@ function soma()
     num1.focus()
     num2.value = ""
     num2.focus()
+    
 }
 
 
@@ -41,14 +42,23 @@ function multiplicar ()
     num2.value = ""
     num2.focus()
 }
-function dividir()
+function dividir(v1,v2)
 {
     let n1 = Number.parseFloat(num1.value)
     let n2 = Number.parseFloat(num2.value)
     let divisao = n1/n2
-    res.innerHTML = `<p>a resposta é ${divisao}</p>`
+    res.innerHTML = `<p>a resposta é ${divisao}</p>` 
     num1.value = ""
     num1.focus()
     num2.value = ""
     num2.focus()
+   
 }
+
+
+
+
+
+
+
+
