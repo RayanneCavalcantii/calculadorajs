@@ -71,10 +71,10 @@ section{
     background-color: black;
     font-size: 15pt;
     color:white;
-    padding: 10px;
+    padding: 9px;
     border-radius: 20px;
     box-shadow: powderblue;
-    margin: auto;
+    margin: 5px;
     text-align: center;
 }
 .botao2:hover{

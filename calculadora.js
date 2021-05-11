@@ -29,7 +29,10 @@ function calcular(operacao)
         
         case 3:
             resp = dividir(n1,n2)
-        break     
+        break    
+        
+        case 4:
+            resp = porcentagem(n1,n2)
 
     }
     res.innerHTML = `<p>a resposta é ${resp}</p>`
@@ -64,6 +67,11 @@ function dividir(n1,n2)
     let divisao = n1/n2
     return divisao 
     
+}
+function porcentagem (n1,n2)
+{
+    let porcento = (n1*n2)/100
+    return porcento
 }
 
 
